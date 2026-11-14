@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anupam Roy – Avionics Engineer & Researcher</title>
+<meta name="description" content="Avionics Engineering graduate working on antennas, radar signal processing and 6G ISAC.">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f7f2e9">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f2e9;
+  --card: #ffffff;
+  --ink: #101827;
+  --muted: #58627a;
+  --navy: #1b3560;
+  --nav: #c2410c;
+  --teal: #2a5a54;
+  --line: #e6dfd2;
+  --tan: #d9c9a8;
+  --btn: #1b3560;
+  --btn-ink: #fff;
+
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+:root { color-scheme: only light; }
+html { background: #f7f2e9; }
+*, *::before, *::after { box-sizing: inherit; }
+
+html {
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 12px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.65 var(--sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--navy);
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--nav);
+  outline-offset: 3px;
+}
+
+.shell {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 45px 80px 0 55px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+}
+
+.side {
+  position: sticky;
+  top: 45px;
+  align-self: start;
+}
+
+.photo {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--tan);
+  background: var(--navy);
+  color: var(--btn-ink);
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+.role {
+  font-size: 20px;
+  color: var(--navy);
+  min-height: 32px;
+  margin: 0 0 34px;
+}
+
+.role i {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--navy);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: bl 1s steps(1) infinite;
+}
+
+@keyframes bl {
+  50% { opacity: 0; }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  text-decoration: none;
+  color: var(--nav);
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 26px;
+}
+
+.menu a::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--tan);
+  flex: none;
+  transition: width .25s;
+}
+
+.menu a.on {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  gap: 18px;
+}
+
+.menu a.on::before {
+  width: 66px;
+  background: var(--navy);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(70,50,20,.07);
+  padding: 40px 40px 30px;
+  height: calc(100vh - 150px);
+  min-height: 420px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tan) transparent;
+}
+
+.js .pg { display: none; }
+.js .pg.on { display: block; }
+
+h1 {
+  font-size: 25px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--navy);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: 34px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+#p-education h2 { color: var(--teal); }
+
+p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+#p-about p {
+  max-width: none;
+  text-align: justify;
+}
+
+b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+li { margin-bottom: 8px; }
+li::marker { color: var(--navy); }
+
+#p-about li { text-align: left; }
+#p-about li b { font-weight: 600; }
+
+.more {
+  font: 500 12px var(--mono);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--tan);
+  padding: 0;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+#extra { display: none; }
+#extra.on { display: block; }
+
+.row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.row:last-child { border-bottom: 0; }
+
+.when {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--teal);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+
+.row h3 {
+  font-size: 19px;
+  margin: 0 0 4px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.row .sub {
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+
+.row .mono {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.row p:last-child,
+.row ul:last-child {
+  margin-bottom: 0;
+}
+
+.sk {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 28px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sk:last-child { border-bottom: 0; }
+.sk dt { font-weight: 600; color: var(--ink); }
+.sk dd { margin: 0; text-align: right; color: var(--muted); }
+.sk dd b { font-weight: 600; }
+
+.pub {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pub:last-child { border-bottom: 0; }
+
+.pub h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0 0 6px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.pub p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 1px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-right: 6px;
+  color: var(--teal);
+}
+
+.dock {
+  position: fixed;
+  right: 80px;
+  bottom: 0;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dock .cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 13px var(--mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 32px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-ink);
+  margin-right: 10px;
+}
+
+.dock .ic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--tan);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+.dock .ic svg {
+  width: 24px;
+  height: 24px;
+}
+
+.rail {
+  position: fixed;
+  right: 30px;
+  bottom: 0;
+  height: 100px;
+  border-left: 1px solid var(--nav);
+  pointer-events: none;
+}
+
+.rail::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 43px);
+  right: 0;
+  width: 30px;
+  border-top: 1px solid var(--nav);
+}
+
+.deco {
+  position: fixed;
+  color: var(--navy);
+  opacity: .7;
+  pointer-events: none;
+  font: 9px var(--mono);
+  text-align: center;
+  letter-spacing: .1em;
+}
+
+.deco small {
+  display: block;
+  color: var(--nav);
+  font-size: 9px;
+}
+
+.vmail {
+  position: fixed;
+  right: 28px;
+  bottom: 130px;
+  writing-mode: vertical-rl;
+  font: 500 12px var(--mono);
+  letter-spacing: .14em;
+  color: var(--nav);
+}
+
+@media (max-width: 1100px) {
+  .deco, .vmail, .rail { display: none; }
+}
+
+@media (max-width: 1000px) {
+  .shell {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 24px 16px 120px;
+  }
+
+  .side { position: static; }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  .menu a::before { display: none; }
+  .menu a { font-size: 13px; }
+
+  .card {
+    height: auto;
+    overflow: visible;
+    padding: 28px 22px;
+  }
+
+  .row, .sk {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .sk dd { text-align: left; }
+  h1 { font-size: 22px; }
+
+  .dock {
+    left: 0;
+    right: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 12px calc(12px + env(safe-area-inset-bottom,0px));
+    background: linear-gradient(transparent,var(--bg) 35%);
+  }
+
+  .dock .cv { margin-right: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role i { animation: none; }
+}
+</style>
+</head>
+
+<body>
+
+<svg class="deco" style="left:170px;top:2px;width:56px" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+<path d="M5 6h16M39 6h16M13 6v5M47 6v5M21 15h18v8H21zM30 15v-4"/>
+<circle cx="30" cy="19" r="2.5"/>
+</svg>
+
+<svg class="deco" style="left:252px;top:2px;width:56px" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+<path d="M5 6h16M39 6h16M13 6v5M47 6v5M21 15h18v8H21zM30 15v-4"/>
+<circle cx="30" cy="19" r="2.5"/>
+</svg>
+
+<svg class="deco" style="right:56px;top:225px;width:48px" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+<path d="M5 6h16M39 6h16M13 6v5M47 6v5M21 15h18v8H21zM30 15v-4"/>
+<circle cx="30" cy="19" r="2.5"/>
+</svg>
+
+<div class="deco" style="right:16px;top:4px;width:84px" aria-hidden="true">
+<svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.3">
+<path d="M14 6l40 4-6 44-40-4zM21 8l-6 42M29 9l-6 42M37 10l-6 42M45 10l-6 42M12 20l40 4M10 34l40 4"/>
+</svg>
+<small>RIS</small>
+<small id="phi">Φ 000 000</small>
+</div>
+
+<div class="deco" style="left:12px;bottom:12px;width:90px" aria-hidden="true">
+<svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M30 8v4M22 52l8-40 8 40M25 38h10M23 46h14M24 22a8 8 0 0 0 0 10M36 22a8 8 0 0 1 0 10M17 18a15 15 0 0 0 0 18M43 18a15 15 0 0 1 0 18"/>
+</svg>
+BASE STATION
+<small id="tx">TX 1011 1010</small>
+</div>
+
+<div class="deco" style="left:56%;bottom:8px;width:50px" aria-hidden="true">
+<svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M14 8h22v10H14zM25 18v6M8 24h44v8H8z"/>
+<circle cx="16" cy="36" r="3"/>
+<circle cx="30" cy="36" r="3"/>
+<circle cx="44" cy="36" r="3"/>
+</svg>
+</div>
+
+<div class="vmail" aria-hidden="true">anupamroy0103@gmail.com</div>
+<div class="rail" aria-hidden="true"></div>
+
+<div class="shell">
+
+<aside class="side">
+
+  <div class="photo">
+    AR
+    <img src="profile.jpg" alt="Anupam Roy" style="object-position:50% 25%">
+  </div>
+
+  <div class="name">Anupam Roy</div>
+
+  <p class="role">
+    <span id="typed"></span><i></i>
+  </p>
+
+  <nav class="menu" aria-label="Sections">
+    <a href="#about" class="on">About</a>
+    <a href="#education">Education &amp; Skills</a>
+    <a href="#experience">Experience &amp; Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Honors &amp; Awards</a>
+    <a href="#leadership">Leadership &amp; Service</a>
+  </nav>
+
+</aside>
+
+<main class="card" id="card">
+
+<section class="pg on" id="p-about">
+  <h1>About</h1>
+
+  <p>
+    I am an Avionics Engineering graduate of
+    <a href="https://aaub.edu.bd">Aviation and Aerospace University, Bangladesh</a>
+    (BSc, March 2026), with a CGPA of 3.52/4.00.
+    Antennas, radar and wireless communication are where my curiosity keeps leading me.
+  </p>
+
+  <p>
+    My undergraduate thesis was a compact
+    <b>4-element UWB microstrip MIMO antenna</b>
+    that I designed, fabricated and measured.
+    Since then I have co-authored papers on patch antennas,
+    <b>OTFS waveforms</b> and
+    <b>6G integrated sensing and communication (ISAC)</b>,
+    and I review manuscripts for the
+    <b>IEEE Geoscience and Remote Sensing Society</b>.
+    From 2022 to 2025 I was a research assistant on the university rocket project,
+    working on its electrical power system.
+
+    <button class="more" id="more" type="button" aria-expanded="false">
+      Read more ›
+    </button>
+  </p>
+
+  <div id="extra">
+    <p>
+      Outside research I tutored SSC and HSC students in mathematics and science
+      from 2019 to 2025, and I served as Outreach Secretary of the AAUB Drone Club.
+      I have also trained with the Bangladesh Air Force on aircraft maintenance
+      and visited the radar unit of the Civil Aviation Authority of Bangladesh.
+    </p>
+  </div>
+
+  <h2>Research focus</h2>
+
+  <p>
+    My research connects antenna engineering, radar signal processing and
+    next-generation wireless systems. My thesis centred on compact UWB MIMO
+    antennas with high isolation. Now I am exploring
+    <b>foundation models</b> and <b>agentic learning</b> for radar-native scene
+    understanding in 6G ISAC networks, alongside OTFS waveform design.
+  </p>
+
+  <h2>Research interest</h2>
+
+  <ul>
+    <li><b>Antenna design:</b> UWB, multiband and reconfigurable microstrip patch antennas, MIMO isolation, defected ground structures.</li>
+    <li><b>Radar signal processing:</b> Pulse-radar simulation and parameter analysis in MATLAB/Simulink.</li>
+    <li><b>6G ISAC:</b> Foundation models and agentic learning for radar-native scene understanding.</li>
+    <li><b>Wireless waveforms:</b> OTFS design and implementation, adaptive filtering.</li>
+  </ul>
+</section>
+
+<section class="pg" id="p-education">
+  <h1>Education &amp; Skills</h1>
+
+  <div class="row">
+    <div class="when">Graduated<br>March 2026</div>
+
+    <div>
+      <h3>BSc in Avionics Engineering</h3>
+      <p class="sub">Aviation and Aerospace University, Bangladesh (AAUB)</p>
+      <p class="mono">CGPA 3.52 / 4.00</p>
+      <p>
+        Thesis: UWB microstrip patch antenna and MIMO.
+        <a href="#">Certificate of Medium of Instruction (English)</a>
+      </p>
+    </div>
+  </div>
+
+  <h2>Skills</h2>
+
+  <dl style="margin:0">
+    <div class="sk">
+      <dt>Programming</dt>
+      <dd><b>Python</b> (Intermediate), <b>C</b>, <b>C++</b> (Intermediate)</dd>
+    </div>
+
+    <div class="sk">
+      <dt>RF, Simulation &amp; Modeling</dt>
+      <dd><b>CST Studio Suite</b> (Intermediate), <b>MATLAB</b> and <b>Simulink</b> (Intermediate), <b>PSpice</b> (Proficient)</dd>
+    </div>
+
+    <div class="sk">
+      <dt>Embedded Systems &amp; IoT</dt>
+      <dd><b>Arduino IDE</b>, <b>Raspberry Pi</b> (Intermediate)</dd>
+    </div>
+
+    <div class="sk">
+      <dt>Technical Tools</dt>
+      <dd><b>LaTeX</b>, Microsoft Office, Google Workspace, Canva (all Proficient)</dd>
+    </div>
+
+    <div class="sk">
+      <dt>Languages</dt>
+      <dd>Bangla (Native), English (Proficient), Hindi (Conversational)</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="pg" id="p-experience">
+  <h1>Experience &amp; Projects</h1>
+
+  <h2>Research</h2>
+
+  <div class="row">
+    <div class="when">Jan 2025 – Dec 2025</div>
+
+    <div>
+      <h3>Undergraduate Thesis: UWB Microstrip Patch Antenna and MIMO</h3>
+
+      <ul>
+        <li>
+          <b>Method:</b> Designed and fabricated a compact 4-element UWB MIMO
+          antenna covering 3.1–10.25 GHz, using spike-shaped radiators and
+          defected ground structures to improve isolation and reduce mutual coupling.
+        </li>
+
+        <li>
+          <b>Results:</b> 24 dB isolation, ECC of 4.5 × 10⁻³,
+          maximum gain of 1.85 dBi and 68% radiation efficiency.
+          Measured minimum S11 was −55.73 dB.
+        </li>
+      </ul>
+
+      <p><a href="#">Thesis book</a></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Jan 2022 – Dec 2025</div>
+
+    <div>
+      <h3>Research Assistant, Rocket Project</h3>
+      <p class="sub">Aviation and Aerospace University, Bangladesh</p>
+      <p>
+        Worked on the design and testing of the Electrical Power System (EPS)
+        for rocket systems: power management, system analysis,
+        software integration and prototype testing.
+      </p>
+    </div>
+  </div>
+
+  <h2>Projects</h2>
+
+  <div class="row">
+    <div class="when">May – Jun 2026</div>
+
+    <div>
+      <h3>Monostatic Pulse Radar in MATLAB/Simulink</h3>
+      <p>
+        Simulation and parameter analysis of a monostatic pulse radar.
+        <a href="#">Details with code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Jul – Dec 2024</div>
+
+    <div>
+      <h3>Real-Time Sensor Monitoring with IoT and Blynk</h3>
+      <p>
+        Built an environmental monitoring system on a Raspberry Pi with an
+        SHT20 temperature and humidity sensor, monitored remotely through
+        the Blynk server.
+      </p>
+    </div>
+  </div>
+
+  <h2>Professional experience</h2>
+
+  <div class="row">
+    <div class="when">Nov 25, 2025</div>
+
+    <div>
+      <h3>Radar Unit Visit</h3>
+      <p class="sub">Civil Aviation Authority of Bangladesh (CAAB)</p>
+      <p>
+        Gained practical exposure to radar surveillance systems and ATC
+        operational monitoring that support flight safety and regulatory compliance.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Jun – Jul 2024</div>
+
+    <div>
+      <h3>Industrial Trainee</h3>
+      <p class="sub">Bangladesh Air Force, MROU 208 &amp; MROU 216</p>
+      <p>
+        Hands-on exposure to aircraft maintenance, inspection and repair.
+        Assisted with avionics troubleshooting and component servicing,
+        and learned maintenance documentation and safety procedures.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2019 – 2025</div>
+
+    <div>
+      <h3>Teaching Assistant</h3>
+      <p>
+        Tutored SSC and HSC students in mathematics and science,
+        including algebra, calculus and physics.
+        <a href="#">Certificate</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="pg" id="p-publications">
+  <h1>Publications</h1>
+
+  <div class="pub">
+    <h3>
+      Closed-Loop Sensor-Informed Agentic Foundation Learning for Adaptive
+      Radar-Native Scene Understanding in High-Mobility 6G ISAC Networks
+    </h3>
+    <p>
+      <span class="tag">Under review</span>
+      ICECE 2026 · First author · <a href="#">Paper</a>
+    </p>
+  </div>
+
+  <div class="pub">
+    <h3>
+      Radar-Native Foundation Model for Semantic Understanding of Synthetic
+      Aperture Radar Imagery in 6G ISAC
+    </h3>
+    <p>
+      <span class="tag">Under review</span>
+      ICECE 2026 · First author · <a href="#">Paper</a>
+    </p>
+  </div>
+
+  <div class="pub">
+    <h3>
+      Reconfigurable Dual-Ring Patch Antenna with Varactor-Diode Based Frequency Tuning
+    </h3>
+    <p>
+      <span class="tag">Presented</span>
+      IEEE EICT (7th) · First author and presenter · <a href="#">Paper</a>
+    </p>
+  </div>
+
+  <div class="pub">
+    <h3>
+      Adaptive Filtering Techniques for Signal Enhancement in Modern Communication Systems
+    </h3>
+    <p>
+      <span class="tag">Accepted</span>
+      11th IEEE Asia-Pacific Conference on Computer Science and Data Engineering 2026
+      · Co-author · <a href="#">Paper</a>
+    </p>
+  </div>
+
+  <div class="pub">
+    <h3>
+      Design and Implementation of OTFS-Based Waveforms for Next Generation
+      Wireless Communication Using MATLAB
+    </h3>
+    <p>
+      <span class="tag">Accepted</span>
+      IEEE OMLET 2026 · First author · <a href="#">GitHub</a> · <a href="#">Paper</a>
+    </p>
+  </div>
+
+  <div class="pub">
+    <h3>
+      Optimized Multiband Microstrip Patch Antenna with Circular DGS for
+      Enhanced 6 GHz Performance
+    </h3>
+    <p>
+      <span class="tag">Presented</span>
+      IEEE ICCCNT 2025 (16th) · Co-author and presenter ·
+      Publication in process · <a href="#">Paper</a>
+    </p>
+  </div>
+</section>
+
+<section class="pg" id="p-awards">
+  <h1>Honors &amp; Awards</h1>
+
+  <div class="row">
+    <div class="when">2025</div>
+    <div>
+      <h3>AAUB Special Scholarship</h3>
+      <p>Awarded for a GPA of 3.85 in the 7th semester.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2023</div>
+    <div>
+      <h3>AAUB Merit Scholarship</h3>
+      <p>Awarded for a GPA of 3.64 in the 2nd semester.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2022</div>
+    <div>
+      <h3>Admission Test Merit Position: 42nd</h3>
+      <p>AAUB. Received a BDT 10,000 merit scholarship.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2022</div>
+    <div>
+      <h3>Rocketry Innovation Challenge</h3>
+      <p>
+        Top 10 entries for a research idea in the national competition
+        organized by a2i (Aspire to Innovate), ICT Division of Bangladesh.
+      </p>
+    </div>
+  </div>
+
+  <p><a href="#">Certificates</a></p>
+</section>
+
+<section class="pg" id="p-leadership">
+  <h1>Leadership &amp; Service</h1>
+
+  <div class="row">
+    <div class="when">2026 – present</div>
+    <div>
+      <h3>Manuscript Reviewer</h3>
+      <p class="sub">IEEE Geoscience and Remote Sensing Society (GRSS)</p>
+      <p><a href="#">Certificate</a></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2022 – 2025</div>
+    <div>
+      <h3>Outreach Secretary, AAUB Drone Club</h3>
+      <p>
+        Led campus-wide outreach and supported event planning, budgeting,
+        sponsorship coordination and team management.
+        <a href="#">Certificate</a>
+      </p>
+    </div>
+  </div>
+
+  <h2>Contact</h2>
+
+  <p>
+    Email: <a href="mailto:anupamroy0103@gmail.com">anupamroy0103@gmail.com</a>
+    <br>
+    Khulna, Bangladesh
+  </p>
+</section>
+
+</main>
+</div>
+
+<div class="dock">
+
+  <a class="cv" href="#" id="cv">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+         stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M8 2v8M4.5 7 8 10.5 11.5 7M2.5 13.5h11"/>
+    </svg>
+    Résumé
+  </a>
+
+  <a class="ic" href="#" aria-label="GitHub" title="GitHub">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#181717" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+  </a>
+
+  <a class="ic" href="https://www.linkedin.com/in/anupam-roy-6b63493a9"
+     target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect width="24" height="24" rx="4" fill="#0a66c2"/>
+      <circle cx="6.5" cy="7" r="1.8" fill="#fff"/>
+      <path fill="#fff" d="M5 10h3v9H5zM10 10h2.8v1.3c.5-.9 1.6-1.5 3-1.5 2.7 0 3.2 1.8 3.2 4V19h-3v-4.6c0-1.1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V19h-3z"/>
+    </svg>
+  </a>
+
+  <a class="ic" href="#" aria-label="Google Scholar" title="Google Scholar">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#4285f4" d="M12 2 1 9l11 7 11-7z"/>
+      <circle cx="12" cy="18" r="5" fill="#356ac3"/>
+    </svg>
+  </a>
+
+  <a class="ic" href="#" aria-label="ORCID" title="ORCID">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#8aa82b" stroke-width="1.8"/>
+      <text x="12" y="16" text-anchor="middle" font-family="Inter,Arial,sans-serif"
+            font-weight="700" font-size="10" fill="#8aa82b">iD</text>
+    </svg>
+  </a>
+
+  <a class="ic" href="https://www.researchgate.net/profile/Anupam-Roy-22"
+     target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="4"
+            fill="none" stroke="#00a38e" stroke-width="1.8"/>
+      <text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif"
+            font-weight="700" font-size="11" fill="#00a38e">RG</text>
+    </svg>
+  </a>
+
+  <a class="ic" href="https://wa.me/8801767114991"
+     target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#25d366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/>
+      <path fill="#fff" d="M8.5 7.5c-.3 0-.7.2-1 .7-.5.9-.3 2.3 1.2 4.2 1.6 2 3.4 2.8 4.6 2.8.8 0 1.5-.5 1.7-1.2.1-.3 0-.5-.2-.6l-1.7-.8c-.2-.1-.4 0-.5.1l-.6.7c-.1.1-.3.1-.4.1-.8-.4-1.9-1.3-2.4-2.3 0-.1 0-.3.1-.4l.5-.6c.1-.1.1-.3.1-.4l-.7-1.6c-.1-.2-.3-.3-.5-.3z"/>
+    </svg>
+  </a>
+
+</div>
+
+<script>
+(function() {
+
+  var d = document.documentElement;
+  d.classList.add("js");
+
+  var pages = [
+    "about",
+    "education",
+    "experience",
+    "publications",
+    "awards",
+    "leadership"
+  ];
+
+  var links = [].slice.call(
+    document.querySelectorAll(".menu a")
+  );
+
+  function go(h) {
+    if (pages.indexOf(h) < 0) h = "about";
+
+    pages.forEach(function(p) {
+      document.getElementById("p-" + p)
+        .classList.toggle("on", p === h);
+    });
+
+    links.forEach(function(a) {
+      a.classList.toggle(
+        "on",
+        a.getAttribute("href") === "#" + h
+      );
+    });
+
+    document.getElementById("card").scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
+
+  function show() {
+    go((location.hash || "#about").slice(1));
+  }
+
+  links.forEach(function(a) {
+    a.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      var h = a.getAttribute("href").slice(1);
+      go(h);
+
+      try {
+        history.replaceState(null, "", "#" + h);
+      } catch(x) {}
+    });
+  });
+
+  addEventListener("hashchange", show);
+  show();
+
+  document.addEventListener("click", function(e) {
+    var a = e.target.closest && e.target.closest('a[href="#"]');
+    if (a) e.preventDefault();
+  });
+
+  var more = document.getElementById("more");
+  var ex = document.getElementById("extra");
+
+  more.addEventListener("click", function() {
+    var on = ex.classList.toggle("on");
+
+    more.textContent = on ? "Read less ‹" : "Read more ›";
+    more.setAttribute("aria-expanded", on);
+  });
+
+  var roles = [
+    "Avionics Engineer",
+    "Antenna & RF Researcher",
+    "Radar & ISAC Researcher"
+  ];
+
+  var el = document.getElementById("typed");
+
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches) {
+    el.textContent = roles[0];
+    return;
+  }
+
+  var r = 0;
+  var i = 0;
+  var del = false;
+
+  (function tick() {
+    var w = roles[r];
+
+    i += del ? -1 : 1;
+    el.textContent = w.slice(0, i);
+
+    var t = del ? 35 : 70;
+
+    if (!del && i === w.length) {
+      del = true;
+      t = 1600;
+    } else if (del && i === 0) {
+      del = false;
+      r = (r + 1) % roles.length;
+      t = 300;
+    }
+
+    setTimeout(tick, t);
+  })();
+
+  var ph = [0, 90, 180, 270];
+  var pi = 0;
+  var phi = document.getElementById("phi");
+  var tx = document.getElementById("tx");
+
+  function p3(n) {
+    return ("00" + n).slice(-3);
+  }
+
+  function b4() {
+    var s = "";
+    for (var k = 0; k < 4; k++) {
+      s += Math.round(Math.random());
+    }
+    return s;
+  }
+
+  setInterval(function() {
+    pi = (pi + 1) % 4;
+
+    phi.textContent =
+      "Φ " + p3(ph[pi]) + " " + p3(ph[(pi + 2) % 4]);
+
+    tx.textContent = "TX " + b4() + " " + b4();
+  }, 1500);
+
+})();
+</script>
+
+</body>
+</html>
