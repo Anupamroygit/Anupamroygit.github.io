@@ -4,408 +4,998 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anupam Roy | Avionics Engineer, Researcher in RF, Wireless Communications, Radar and AI-driven Signal Processing.">
-<title>Anupam Roy | Research Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<title>Anupam Roy | Avionics Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #302f2d;
+    color: #142033;
+}
+
+:root {
+    --cream: #f7f4ed;
+    --orange: #d9480f;
+    --navy: #1d3c63;
+    --text: #52627a;
+}
+
+.container {
+    min-height: 100vh;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid #302f2d;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    left: 3.65%;
+    top: 7%;
+    width: 24%;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.profile img {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #d8c9ad;
+    background: white;
+}
+
+.profile h1 {
+    font-size: 32px;
+    margin-top: 28px;
+    margin-bottom: 16px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.profile p {
+    color: var(--navy);
+    font-size: 20px;
+    min-height: 30px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 14px 0 14px 55px;
+    width: max-content;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 37px;
+    height: 1px;
+    background: #d8d0c2;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 55px;
+    bottom: 8px;
+    width: calc(100% - 55px);
+    height: 2px;
+    background: var(--orange);
+}
+
+nav a:hover {
+    color: #a93208;
+}
+
+/* MAIN CONTENT */
+
+.content {
+    position: relative;
+    margin: 3.1vh 5.1% 8vh 30%;
+    width: 65%;
+    height: 83vh;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #e2ddd4;
+    border-radius: 14px;
+    padding: 48px 46px 30px;
+    z-index: 2;
+    scrollbar-color: #d9d1c4 #f7f5f1;
+    scrollbar-width: thin;
+}
+
+.content::-webkit-scrollbar {
+    width: 9px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #d9d1c4;
+    border-radius: 10px;
+}
+
+/* SECTIONS */
+
+section {
+    padding-bottom: 42px;
+    scroll-margin-top: 20px;
+}
+
+section h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 38px;
+    padding-bottom: 17px;
+    border-bottom: 2px solid var(--navy);
+}
+
+section p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 17px;
+    text-align: justify;
+}
+
+section strong {
+    color: #142033;
+}
+
+section a {
+    color: var(--navy);
+}
+
+/* RESEARCH FOCUS */
+
+.subheading {
+    margin: 35px 0 20px;
+    border-bottom: 1px solid #ded8cc;
+}
+
+.subheading h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--navy);
+    text-transform: uppercase;
+    padding-bottom: 12px;
+}
+
+.focus-grid,
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.focus-card,
+.skill-card {
+    background: #fcfbf9;
+    border: 1px solid #e8e4dc;
+    padding: 18px;
+    border-radius: 7px;
+}
+
+.focus-card h4,
+.skill-card h4 {
+    color: var(--navy);
+    margin-bottom: 9px;
+}
+
+.focus-card p,
+.skill-card p {
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+}
+
+/* EXPERIENCE AND PROJECTS */
+
+.entry,
+.publication {
+    padding-bottom: 24px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e9e5de;
+}
+
+.entry h3,
+.publication h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 8px 0;
+}
+
+.date {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.institution {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.entry ul {
+    padding-left: 22px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.publication span {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* AWARDS */
+
+.award {
+    padding: 17px;
+    background: #faf9f6;
+    border: 1px solid #e9e5de;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.award h4 {
+    font-size: 15px;
+}
+
+.award p {
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+/* DECORATIONS */
+
+.decoration {
+    position: fixed;
+    color: #395879;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.drone {
+    top: 1%;
+    font-size: 35px;
+    letter-spacing: -10px;
+}
+
+.drone-one {
+    left: 15.5%;
+}
+
+.drone-two {
+    left: 24%;
+}
+
+.satellite {
+    position: fixed;
+    right: 2%;
+    top: 2%;
+    font-size: 45px;
+    color: #395879;
+    transform: rotate(-15deg);
+}
+
+.tower {
+    position: fixed;
+    left: 1.3%;
+    bottom: 1%;
+    font-size: 48px;
+    color: #395879;
+}
+
+/* EMAIL */
+
+.email {
+    position: fixed;
+    right: 1.4%;
+    bottom: 13%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    z-index: 5;
+}
+
+.email a {
+    color: var(--orange);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* BOTTOM SOCIAL BAR */
+
+.bottom-bar {
+    position: fixed;
+    right: 5%;
+    bottom: 1.2%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 10;
+}
+
+.resume {
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.social {
+    width: 43px;
+    height: 43px;
+    border: 1px solid #d5a64e;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: white;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.social:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-3px);
+}
+
+footer {
+    border-top: 1px solid #ded8cc;
+    padding: 20px 0;
+    color: #8993a1;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 650px) {
+
+    .container {
+        padding: 20px 15px 90px;
+        overflow: visible;
+    }
+
+    .sidebar {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile h1 {
+        font-size: 22px;
+        margin: 0 0 5px;
+    }
+
+    .profile p {
+        font-size: 13px;
+    }
+
+    nav {
+        flex-direction: row;
+        overflow-x: auto;
+        margin: 20px 0;
+        gap: 8px;
+    }
+
+    nav a {
+        white-space: nowrap;
+        font-size: 10px;
+        padding: 10px;
+        border: 1px solid #e2ddd4;
+        border-radius: 20px;
+    }
+
+    nav a::before,
+    nav a.active::after {
+        display: none;
+    }
+
+    .content {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        padding: 25px 20px;
+    }
+
+    section h2 {
+        font-size: 21px;
+    }
+
+    section p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .focus-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .decoration,
+    .email {
+        display: none;
+    }
+
+    .bottom-bar {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--cream);
+        padding: 10px;
+        justify-content: center;
+        gap: 9px;
+    }
+
+    .social {
+        width: 35px;
+        height: 35px;
+    }
+
+    .resume {
+        padding: 12px 17px;
+        font-size: 10px;
+    }
+
+    footer {
+        display: block;
+        line-height: 2;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header class="header">
-  <a class="logo" href="#home"><span>AR</span> ANUPAM ROY.</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
-  <nav id="nav">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#education">Education</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact ↗</a>
-  </nav>
-</header>
+<div class="container">
 
-<main>
+<!-- SIDEBAR -->
 
-<!-- HERO -->
-<section class="hero section-wrap" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">AVIONICS ENGINEER · RESEARCHER</div>
-    <h1>Engineering the<br><span>Signals of Tomorrow.</span></h1>
-    <p>
-      I am <strong>Anupam Roy</strong>, a recent graduate in Avionics
-      Engineering from Aviation and Aerospace University, Bangladesh.
-      My research interests include RF and microwave engineering,
-      wireless communications, radar sensing, and AI-driven signal processing.
-    </p>
-    <div class="buttons">
-      <a class="btn primary" href="#publications">Explore Research ↘</a>
-      <a class="btn secondary" href="#contact">Contact Me ↗</a>
-    </div>
-    <div class="hero-info">
-      <span>● Khulna, Bangladesh</span>
-      <span>Open to Research Opportunities</span>
-    </div>
-  </div>
+<aside class="sidebar">
 
-  <div class="radar">
-    <div class="orbit orbit1"></div>
-    <div class="orbit orbit2"></div>
-    <div class="orbit orbit3"></div>
-    <div class="radar-center">AR</div>
-    <div class="radar-label">RF / MICROWAVE</div>
-    <div class="radar-bottom">RADAR · ISAC · AI</div>
-  </div>
-</section>
+    <div class="profile">
+        <img src="assets/profile.jpg" alt="Anupam Roy">
 
-<!-- ABOUT -->
-<section class="section section-wrap" id="about">
-  <div class="section-heading">
-    <div class="eyebrow">01 / INTRODUCTION</div>
-    <h2>About <span>Me</span></h2>
-  </div>
+        <h1>Anupam Roy</h1>
 
-  <div class="about-grid">
-    <div>
-      <p class="large-text">
-        I am an Avionics Engineering graduate passionate about
-        communication systems, electromagnetic engineering,
-        radar sensing, and intelligent signal processing.
-      </p>
-      <p>
-        I graduated from Aviation and Aerospace University, Bangladesh
-        (AAUB) in March 2026 with a CGPA of 3.52/4.00.
-        My academic journey has involved research in antenna design,
-        reconfigurable RF structures, OTFS-based wireless communication,
-        adaptive filtering, and intelligent radar sensing.
-      </p>
-      <p>
-        I enjoy combining theoretical concepts with simulation,
-        mathematical modeling, and practical system implementation.
-        My long-term research interests focus on next-generation
-        communication and sensing technologies.
-      </p>
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/anupam-roy-6b63493a9/" target="_blank">LinkedIn ↗</a>
-        <a href="https://www.researchgate.net/profile/Anupam-Roy-22" target="_blank">ResearchGate ↗</a>
-        <a href="https://github.com/Anupamroygit" target="_blank">GitHub ↗</a>
-      </div>
+        <p>
+            <span id="typing"></span>
+            <span class="cursor">|</span>
+        </p>
     </div>
 
-    <div class="profile-card">
-      <div class="avatar">AR</div>
-      <h3>Anupam Roy</h3>
-      <p>B.Sc. in Avionics Engineering</p>
-      <hr>
-      <div class="profile-row"><span>University</span><strong>AAUB</strong></div>
-      <div class="profile-row"><span>Graduation</span><strong>March 2026</strong></div>
-      <div class="profile-row"><span>CGPA</span><strong>3.52 / 4.00</strong></div>
-      <div class="profile-row"><span>Final 3 Semesters</span><strong>3.85 / 4.00</strong></div>
-      <div class="profile-row"><span>Location</span><strong>Khulna, Bangladesh</strong></div>
-    </div>
-  </div>
-</section>
+    <nav>
+        <a href="#about" class="active">About</a>
+        <a href="#education">Education & Skills</a>
+        <a href="#experience">Experience & Projects</a>
+        <a href="#publications">Publications & Research</a>
+        <a href="#awards">Honors & Awards</a>
+        <a href="#leadership">Leadership & Volunteering</a>
+        <a href="#references">References</a>
+    </nav>
 
-<!-- RESEARCH -->
-<section class="section section-wrap" id="research">
-  <div class="section-heading">
-    <div class="eyebrow">02 / RESEARCH DIRECTIONS</div>
-    <h2>Research <span>Interests</span></h2>
-  </div>
+</aside>
 
-  <div class="cards-grid">
-    <article class="card">
-      <div class="card-icon">⌁</div>
-      <h3>RF & Microwave Engineering</h3>
-      <p>Antenna design, reconfigurable RF structures, electromagnetic behavior, and EMI/EMC challenges.</p>
-      <div class="tags"><span>Antennas</span><span>EMC</span><span>RF Circuits</span></div>
-    </article>
+<!-- MAIN CONTENT -->
 
-    <article class="card">
-      <div class="card-icon">◉</div>
-      <h3>Wireless Communications</h3>
-      <p>OTFS waveforms, channel modeling, advanced modulation, and high-mobility wireless communication.</p>
-      <div class="tags"><span>OTFS</span><span>6G / ISAC</span><span>Wireless</span></div>
-    </article>
+<main class="content" id="content">
 
-    <article class="card">
-      <div class="card-icon">⌖</div>
-      <h3>Radar & Intelligent Sensing</h3>
-      <p>Radar signal processing, adaptive sensing, sensor fusion, and radar-native scene understanding.</p>
-      <div class="tags"><span>Radar</span><span>ISAC</span><span>Sensor Fusion</span></div>
-    </article>
+    <!-- ABOUT -->
 
-    <article class="card">
-      <div class="card-icon">∿</div>
-      <h3>AI for Signal Processing</h3>
-      <p>Machine learning, adaptive filtering, foundation models, and agentic AI for intelligent sensing.</p>
-      <div class="tags"><span>AI</span><span>ML</span><span>Adaptive Systems</span></div>
-    </article>
+    <section id="about">
 
-    <article class="card">
-      <div class="card-icon">ϟ</div>
-      <h3>Power & Electrification</h3>
-      <p>EM/EMC in power circuits, distribution-system planning, and electric vehicle grid integration.</p>
-      <div class="tags"><span>EMI / EMC</span><span>Power Systems</span><span>EV Grid</span></div>
-    </article>
-  </div>
-</section>
+        <h2>About</h2>
 
-<!-- EDUCATION -->
-<section class="section section-wrap" id="education">
-  <div class="section-heading">
-    <div class="eyebrow">03 / ACADEMIC BACKGROUND</div>
-    <h2>Education & <span>Achievements</span></h2>
-  </div>
+        <p>
+            I am a recent <strong>B.Sc. graduate in Avionics Engineering</strong>
+            from <strong>Aviation and Aerospace University, Bangladesh</strong>.
+            My academic and research interests focus on RF and microwave
+            engineering, antenna design, wireless communication,
+            radar signal processing, and intelligent sensing.
+        </p>
 
-  <div class="education-card">
-    <div class="edu-date">2022 — 2026</div>
-    <div>
-      <h3>B.Sc. in Avionics Engineering</h3>
-      <p class="muted">Aviation and Aerospace University, Bangladesh (AAUB)</p>
-      <p>Graduated in March 2026.</p>
-      <h3 class="cyan">CGPA: 3.52 / 4.00</h3>
-      <p>Final three semesters CGPA: 3.85 / 4.00</p>
-      <p>Undergraduate Thesis Grade: 4.00 / 4.00</p>
-    </div>
-  </div>
+        <p>
+            My research experience includes antenna design, adaptive
+            signal processing, OTFS-based waveform studies, and
+            radar-oriented sensing concepts. I am interested in
+            combining electromagnetic design, mathematical modelling,
+            simulation, and signal processing to investigate practical
+            communication and sensing problems.
+        </p>
 
-  <div class="stats-grid">
-    <div class="stat"><strong>42nd</strong><p>Admission-test merit rank among 10,000+ candidates</p></div>
-    <div class="stat"><strong>Top 5%</strong><p>Second-semester academic performance</p></div>
-    <div class="stat"><strong>13th</strong><p>Department merit rank</p></div>
-    <div class="stat"><strong>5.00</strong><p>SSC and HSC GPA (each)</p></div>
-  </div>
+        <div class="subheading">
+            <h3>Research Focus</h3>
+        </div>
 
-  <h3 class="subheading">Awards & Scholarships</h3>
-  <div class="tags award-tags">
-    <span>BDT 10,000 Merit Scholarship</span>
-    <span>AAUB Merit Scholarship 2023</span>
-    <span>AAUB Special Scholarship 2025</span>
-    <span>Rocketary Innovation Challenge – 7th Place</span>
-  </div>
-</section>
+        <div class="focus-grid">
 
-<!-- PUBLICATIONS -->
-<section class="section section-wrap" id="publications">
-  <div class="section-heading">
-    <div class="eyebrow">04 / SCHOLARLY OUTPUT</div>
-    <h2>Publications & <span>Research Papers</span></h2>
-  </div>
+            <div class="focus-card">
+                <h4>RF & Microwave Engineering</h4>
+                <p>Antennas, electromagnetic systems and propagation.</p>
+            </div>
 
-  <div class="publication">
-    <span class="pub-status">ACCEPTED · 2026</span>
-    <div>
-      <h3>Adaptive Filtering Techniques for Signal Enhancement in Modern Communication Systems</h3>
-      <p>IEEE Asia-Pacific CSDE 2026 · Paper ID: IEEE_CSDE_2026_4843.</p>
-      <p class="muted">Co-authors: Solayman Sikder, Anupam Roy, Partho Prothim Das, M. Nafis Faisal (Shuvo), Manoj Pyne Shanto, and Mohammad Raihan Samee. Presented in Cox's Bazar, Bangladesh, 1–3 November 2026.</p>
-    </div>
-  </div>
+            <div class="focus-card">
+                <h4>Radar & Signal Processing</h4>
+                <p>Radar systems, detection and adaptive filtering.</p>
+            </div>
 
-  <div class="publication">
-    <span class="pub-status">ACCEPTED</span>
-    <div>
-      <h3>Design and Implementation of OTFS-Based Waveforms for Next Generation Wireless Communication Using MATLAB</h3>
-      <p>OM-LET · First Author.</p>
-      <p class="muted">MATLAB-based OTFS implementation using delay-Doppler processing, multipath channel modeling, sinc interpolation, Fourier processing, and AWGN analysis.</p>
-      <a class="text-link" href="https://github.com/Anupamroygit/OTFS-Waveform-Design-MATLAB" target="_blank">View MATLAB Implementation ↗</a>
-    </div>
-  </div>
+            <div class="focus-card">
+                <h4>Wireless Communication</h4>
+                <p>OTFS, waveform design and communication systems.</p>
+            </div>
 
-  <div class="publication">
-    <span class="pub-status">IEEE · 2025</span>
-    <div>
-      <h3>Reconfigurable Dual-Ring Patch Antenna with Varactor-Diode Based Frequency Tuning</h3>
-      <p>IEEE EICT 2025 · First Author & Presenter.</p>
-      <p class="muted">IEEE Xplore Document: 11355588. Frequency tuning from 5.60–6.18 GHz using four varactor diodes on Rogers RO4350B substrate.</p>
-      <a class="text-link" href="https://ieeexplore.ieee.org/document/11355588" target="_blank">IEEE Xplore ↗</a>
-    </div>
-  </div>
+            <div class="focus-card">
+                <h4>Integrated Sensing</h4>
+                <p>ISAC and AI-driven sensing applications.</p>
+            </div>
 
-  <div class="publication">
-    <span class="pub-status">CONFERENCE · 2025</span>
-    <div>
-      <h3>Circular DGS 6 GHz Patch Antenna</h3>
-      <p>ICCCNT 2025 · Paper ID: 5481.</p>
-      <p class="muted">Co-author: Solayman Sikder. Proceedings/publication status previously reported as in process.</p>
-    </div>
-  </div>
+        </div>
 
-  <div class="publication">
-    <span class="pub-status">ACCEPTED · 2027</span>
-    <div>
-      <h3>IEEE EM³I 2027 Conference Paper</h3>
-      <p>First Author · International Conference on Emerging Materials, Measurement Technologies and Machine Intelligence.</p>
-      <p class="muted">Accepted paper. Add the final paper title, paper ID, and proceedings link when confirmed.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- THESIS -->
-<section class="section section-wrap" id="thesis">
-  <div class="section-heading">
-    <div class="eyebrow">05 / UNDERGRADUATE RESEARCH</div>
-    <h2>Thesis <span>Spotlight</span></h2>
-  </div>
+    <!-- EDUCATION -->
 
-  <div class="thesis-card">
-    <span class="pub-status">GRADE: 4.00 / 4.00</span>
-    <h3>Four-Element UWB MIMO Antenna Design and Performance Evaluation</h3>
-    <p>Designed and evaluated a compact four-element Ultra-Wideband MIMO antenna using an FR-4 substrate, Defected Ground Structure (DGS), and spike features to improve isolation and antenna performance.</p>
+    <section id="education">
 
-    <div class="thesis-specs">
-      <div><span>OPERATING BAND</span><strong>3.1–10.25 GHz</strong></div>
-      <div><span>DIMENSIONS</span><strong>38.5 × 38.5 × 1.5 mm³</strong></div>
-      <div><span>ISOLATION</span><strong>24 dB</strong></div>
-      <div><span>GAIN</span><strong>1.85 dBi</strong></div>
-      <div><span>EFFICIENCY</span><strong>68%</strong></div>
-      <div><span>MEASURED S11</span><strong>−55.73 dB</strong></div>
-    </div>
-    <p class="muted">Software: CST Studio Suite · Substrate: FR-4 (εr = 4.3)</p>
-    <p class="muted">Supervisor: Abu Bakar Siddik, Assistant Professor, Avionics, AAUB.</p>
-  </div>
-</section>
+        <h2>Education & Skills</h2>
 
-<!-- PROJECTS -->
-<section class="section section-wrap" id="projects">
-  <div class="section-heading">
-    <div class="eyebrow">06 / SELECTED WORK</div>
-    <h2>Research <span>Projects</span></h2>
-  </div>
+        <div class="entry">
 
-  <div class="cards-grid">
-    <article class="card featured">
-      <span class="pub-status">AI · RADAR · ISAC</span>
-      <h3>Closed-Loop Sensor-Informed Agentic Foundation Learning for Adaptive Radar-Native Scene Understanding in High-Mobility 6G ISAC Networks</h3>
-      <p>A proposed framework combining radar and GPS/IMU sensor information with foundation-model-based adaptive optimization of beamforming, waveform, and LoRA parameters through reward-driven learning.</p>
-      <div class="tags"><span>77 GHz</span><span>4 GHz BW</span><span>CARLA</span><span>MATLAB</span><span>K-Radar</span></div>
-      <div class="project-stats"><strong>0.83 mAP</strong><strong>0.76 mIoU</strong><strong>INT8 Edge Direction</strong></div>
-    </article>
+            <span class="date">March 2026</span>
 
-    <article class="card">
-      <span class="pub-status">WIRELESS COMMUNICATION</span>
-      <h3>OTFS Waveform Design Using MATLAB</h3>
-      <p>Delay-Doppler-domain waveform implementation and evaluation under multipath and AWGN channel conditions.</p>
-      <div class="tags"><span>MATLAB</span><span>OTFS</span><span>AWGN</span></div>
-      <a class="text-link" href="https://github.com/Anupamroygit/OTFS-Waveform-Design-MATLAB" target="_blank">GitHub Repository ↗</a>
-    </article>
+            <h3>B.Sc. in Avionics Engineering</h3>
 
-    <article class="card">
-      <span class="pub-status">RF / ANTENNA</span>
-      <h3>Varactor-Tuned Dual-Ring Patch Antenna</h3>
-      <p>Reconfigurable patch antenna design using four varactor diodes for frequency tuning across 5.60–6.18 GHz.</p>
-      <div class="tags"><span>CST</span><span>Varactor Diodes</span><span>RF</span></div>
-    </article>
+            <p class="institution">
+                Aviation and Aerospace University, Bangladesh
+            </p>
 
-    <article class="card">
-      <span class="pub-status">SIGNAL PROCESSING</span>
-      <h3>Adaptive Filtering for Signal Enhancement</h3>
-      <p>Research on adaptive filtering techniques for improving signal quality in modern communication systems.</p>
-      <div class="tags"><span>DSP</span><span>MATLAB</span><span>Filtering</span></div>
-    </article>
-  </div>
-</section>
+            <p>CGPA: <strong>3.52 / 4.00</strong></p>
 
-<!-- EXPERIENCE -->
-<section class="section section-wrap" id="experience">
-  <div class="section-heading">
-    <div class="eyebrow">07 / PROFESSIONAL JOURNEY</div>
-    <h2>Experience & <span>Activities</span></h2>
-  </div>
+            <p>
+                Thesis: Four-Element UWB MIMO Antenna Design
+                and Performance Evaluation.
+            </p>
 
-  <div class="timeline">
-    <div class="timeline-item">
-      <span>JAN 2022 – DEC 2025</span>
-      <div><h3>Research Assistant · AAUB Rocket Project</h3>
-      <p>Worked on EPS power management, system analysis, software integration, prototype testing, and lithium-metal battery research.</p></div>
-    </div>
-    <div class="timeline-item">
-      <span>JUN – JUL 2024</span>
-      <div><h3>Trainee · Bangladesh Air Force</h3>
-      <p>Technical training exposure at MROU 208 and MROU 216.</p></div>
-    </div>
-    <div class="timeline-item">
-      <span>STUDENT LEADERSHIP</span>
-      <div><h3>Assistant General Secretary · AAUB Drone Club</h3>
-      <p>Supported student technical activities and club coordination.</p></div>
-    </div>
-    <div class="timeline-item">
-      <span>RESEARCH SERVICE</span>
-      <div><h3>Manuscript Reviewer · IEEE Geoscience</h3>
-      <p>Contributed to research manuscript peer-review activities.</p></div>
-    </div>
-    <div class="timeline-item">
-      <span>25 NOV 2025</span>
-      <div><h3>Technical Visit · CAAB Radar Unit</h3>
-      <p>Technical exposure at the Civil Aviation Authority of Bangladesh radar unit.</p></div>
-    </div>
-    <div class="timeline-item">
-      <span>2019 – 2025</span>
-      <div><h3>Teaching Assistant · Mathematics & Science</h3>
-      <p>Supported mathematics and science learning.</p></div>
-    </div>
-  </div>
+        </div>
 
-  <div class="reviewer-note">
-    <strong>Additional Academic Service</strong>
-    <p>Invited reviewer for ICoACT 2027, scheduled for 24–25 June 2027.</p>
-  </div>
-</section>
+        <div class="subheading">
+            <h3>Technical Skills</h3>
+        </div>
 
-<!-- SKILLS -->
-<section class="section section-wrap" id="skills">
-  <div class="section-heading">
-    <div class="eyebrow">08 / TECHNICAL TOOLKIT</div>
-    <h2>Technical <span>Skills</span></h2>
-  </div>
+        <div class="skills-grid">
 
-  <div class="skills-grid">
-    <div class="skill-box"><h3>RF & Electromagnetics</h3><div class="tags"><span>CST Studio Suite</span><span>Ansys HFSS</span><span>PSpice</span><span>Microwave & Antennas</span><span>Radar Systems</span></div></div>
-    <div class="skill-box"><h3>Programming</h3><div class="tags"><span>MATLAB</span><span>Python</span><span>C / C++</span><span>Embedded C</span></div></div>
-    <div class="skill-box"><h3>Modeling & Embedded Systems</h3><div class="tags"><span>Simulink</span><span>Arduino IDE</span><span>Raspberry Pi</span></div></div>
-    <div class="skill-box"><h3>Core Coursework</h3><div class="tags"><span>Digital Signal Processing</span><span>Satellite Communication</span><span>Radar System Engineering</span><span>Microwave & Antennas</span></div></div>
-  </div>
+            <div class="skill-card">
+                <h4>Simulation Tools</h4>
+                <p>CST Studio Suite, HFSS, MATLAB, Simulink, PSpice</p>
+            </div>
 
-  <div class="course-results">
-    <div><span>MICROWAVE & ANTENNAS</span><strong>4.00 / 4.00</strong></div>
-    <div><span>RADAR SYSTEM ENGINEERING</span><strong>4.00 / 4.00</strong></div>
-    <div><span>SATELLITE COMMUNICATION</span><strong>4.00 / 4.00</strong></div>
-    <div><span>DIGITAL SIGNAL PROCESSING</span><strong>3.75 / 4.00</strong></div>
-  </div>
-</section>
+            <div class="skill-card">
+                <h4>Programming</h4>
+                <p>Python, C/C++, Embedded C, MATLAB</p>
+            </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="section-wrap">
-    <div class="eyebrow">09 / LET'S CONNECT</div>
-    <h2>Let's Build<br><span>Something Meaningful.</span></h2>
-    <p>
-      I welcome research discussions, academic collaborations,
-      and opportunities in wireless communications, RF engineering,
-      radar sensing, and intelligent signal processing.
-    </p>
-    <div class="buttons">
-      <a class="btn primary" href="https://www.linkedin.com/in/anupam-roy-6b63493a9/" target="_blank">LinkedIn ↗</a>
-      <a class="btn secondary" href="https://www.researchgate.net/profile/Anupam-Roy-22" target="_blank">ResearchGate ↗</a>
-      <a class="btn secondary" href="https://github.com/Anupamroygit" target="_blank">GitHub ↗</a>
-    </div>
-    <div class="contact-caption">B.Sc. in Avionics Engineering · Aviation and Aerospace University, Bangladesh</div>
-  </div>
-</section>
+            <div class="skill-card">
+                <h4>Hardware</h4>
+                <p>Arduino IDE, Raspberry Pi, Embedded Systems</p>
+            </div>
+
+            <div class="skill-card">
+                <h4>Research Areas</h4>
+                <p>RF, Microwave, Antennas, Radar, DSP, ISAC</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2>Experience & Projects</h2>
+
+        <div class="entry">
+
+            <span class="date">January 2022 – December 2025</span>
+
+            <h3>Research Assistant — AAUB Rocket Project</h3>
+
+            <p class="institution">
+                Aviation and Aerospace University, Bangladesh
+            </p>
+
+            <ul>
+                <li>Electrical power management and system analysis.</li>
+                <li>Software integration and prototype testing.</li>
+                <li>Lithium-metal battery research activities.</li>
+            </ul>
+
+        </div>
+
+        <div class="entry">
+
+            <span class="date">Undergraduate Thesis</span>
+
+            <h3>
+                Four-Element UWB MIMO Antenna Design
+                and Performance Evaluation
+            </h3>
+
+            <p>
+                Designed and evaluated a compact four-element UWB
+                MIMO antenna using CST Studio Suite.
+                Operating frequency range: 3.1–10.25 GHz.
+            </p>
+
+        </div>
+
+        <div class="entry">
+
+            <span class="date">Research Project</span>
+
+            <h3>
+                OTFS-Based Waveform Design for
+                Next-Generation Wireless Communication
+            </h3>
+
+            <p>
+                MATLAB-based research involving delay-Doppler
+                representation, multipath channels, interpolation,
+                Fourier processing and AWGN.
+            </p>
+
+            <a href="https://github.com/Anupamroygit/OTFS-Waveform-Design-MATLAB"
+               target="_blank">
+                View GitHub Project ↗
+            </a>
+
+        </div>
+
+        <div class="entry">
+
+            <span class="date">June – July 2024</span>
+
+            <h3>Industrial Training — Bangladesh Air Force</h3>
+
+            <p>Training exposure at MROU 208 and 216.</p>
+
+        </div>
+
+    </section>
+
+    <!-- PUBLICATIONS -->
+
+    <section id="publications">
+
+        <h2>Publications & Research</h2>
+
+        <div class="publication">
+
+            <span>IEEE Conference · First Author & Presenter</span>
+
+            <h3>
+                Reconfigurable Dual-Ring Patch Antenna with
+                Varactor-Diode Based Frequency Tuning
+            </h3>
+
+            <p>IEEE EICT 2025 · Xplore: 11355588</p>
+
+        </div>
+
+        <div class="publication">
+
+            <span>Accepted · First Author</span>
+
+            <h3>
+                Design and Implementation of OTFS-Based Waveforms
+                for Next Generation Wireless Communication Using MATLAB
+            </h3>
+
+            <p>OM-LET · Accepted</p>
+
+        </div>
+
+        <div class="publication">
+
+            <span>IEEE Conference</span>
+
+            <h3>Circular DGS-Based 6 GHz Patch Antenna</h3>
+
+            <p>ICCCNT 2025 · Paper ID: 5481</p>
+
+        </div>
+
+        <div class="publication">
+
+            <span>IEEE Conference · Accepted / Presented</span>
+
+            <h3>
+                Adaptive Filtering Techniques for Signal Enhancement
+                in Modern Communication Systems
+            </h3>
+
+            <p>IEEE CSDE 2026 · Paper ID: IEEE_CSDE_2026_4843</p>
+
+        </div>
+
+    </section>
+
+    <!-- AWARDS -->
+
+    <section id="awards">
+
+        <h2>Honors & Awards</h2>
+
+        <div class="award">
+            <h4>AAUB Special Scholarship</h4>
+            <p>2025</p>
+        </div>
+
+        <div class="award">
+            <h4>AAUB Merit Scholarship</h4>
+            <p>2023</p>
+        </div>
+
+        <div class="award">
+            <h4>Merit Scholarship</h4>
+            <p>BDT 10,000</p>
+        </div>
+
+        <div class="award">
+            <h4>Rocketary Innovation Challenge</h4>
+            <p>7th Place</p>
+        </div>
+
+        <div class="award">
+            <h4>University Admission Test</h4>
+            <p>Merit Position: 42 among more than 10,000 candidates</p>
+        </div>
+
+    </section>
+
+    <!-- LEADERSHIP -->
+
+    <section id="leadership">
+
+        <h2>Leadership & Volunteering</h2>
+
+        <div class="entry">
+            <h3>Assistant General Secretary — AAUB Drone Club</h3>
+        </div>
+
+        <div class="entry">
+            <h3>Teaching Assistant / Tutor — Mathematics & Science</h3>
+            <p>2019–2025</p>
+        </div>
+
+        <div class="entry">
+            <h3>Research Reviewing</h3>
+            <p>IEEE Geoscience manuscript reviewing activities.</p>
+        </div>
+
+    </section>
+
+    <!-- REFERENCES -->
+
+    <section id="references">
+
+        <h2>References</h2>
+
+        <p>Academic references are available upon request.</p>
+
+    </section>
+
+    <footer>
+        <span>© <span id="year"></span> Anupam Roy</span>
+        <span>Avionics Engineering · Research</span>
+    </footer>
 
 </main>
 
-<footer>
-  <div class="section-wrap footer">
-    <a class="logo" href="#home"><span>AR</span> ANUPAM ROY.</a>
-    <p>Research-driven thinking. Engineering the future.</p>
-    <p>© <span id="year"></span> Anupam Roy</p>
-  </div>
-</footer>
+<!-- DECORATIVE ELEMENTS -->
 
-<script src="script.js"></script>
+<div class="decoration drone drone-one">⌁◉⌁</div>
+<div class="decoration drone drone-two">⌁◉⌁</div>
+
+<div class="satellite">▦</div>
+
+<div class="tower">♧</div>
+
+<!-- EMAIL -->
+
+<div class="email">
+    <a href="mailto:YOUR_EMAIL@example.com">
+        YOUR_EMAIL@example.com
+    </a>
+</div>
+
+<!-- BOTTOM BAR -->
+
+<div class="bottom-bar">
+
+    <a class="resume" href="assets/Anupam_Roy_CV.pdf" download>
+        ↓ &nbsp; RÉSUMÉ
+    </a>
+
+    <a class="social" href="https://github.com/Anupamroygit" target="_blank">
+        GH
+    </a>
+
+    <a class="social" href="https://www.linkedin.com/in/anupam-roy-6b63493a9/" target="_blank">
+        in
+    </a>
+
+    <a class="social" href="https://scholar.google.com/" target="_blank">
+        G
+    </a>
+
+    <a class="social" href="https://orcid.org/" target="_blank">
+        iD
+    </a>
+
+    <a class="social" href="https://www.researchgate.net/profile/Anupam-Roy-22" target="_blank">
+        RG
+    </a>
+
+</div>
+
+</div>
+
+<script>
+
+// Typing animation
+
+const titles = [
+    "Avionics Engineer",
+    "RF & Wireless Communication Researcher",
+    "Radar & Signal Processing Researcher"
+];
+
+let titleIndex = 0;
+
+function changeTitle() {
+    document.getElementById("typing").textContent =
+        titles[titleIndex];
+
+    titleIndex = (titleIndex + 1) % titles.length;
+}
+
+changeTitle();
+setInterval(changeTitle, 2800);
+
+
+// Current year
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// Navigation active section
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            navLinks.forEach(link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + entry.target.id
+                );
+
+            });
+
+        }
+
+    });
+
+}, {
+    root: document.getElementById("content"),
+    threshold: 0.25
+});
+
+sections.forEach(section => observer.observe(section));
+
+
+// Smooth navigation
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function(event) {
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
