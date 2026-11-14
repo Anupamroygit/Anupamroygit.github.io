@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anupam Roy – Avionics Engineer & Researcher</title>
+<meta name="description" content="Avionics Engineering graduate working on antennas, radar signal processing and 6G ISAC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--card:#ffffff;--ink:#141b2d;--muted:#4b5468;--navy:#1b2f55;--nav:#c2410c;--teal:#25584f;--line:#e3e5ea;--btn:#1b2f55;--btn-ink:#fff;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--card:#1a1f29;--ink:#ebe7de;--muted:#a3aabb;--navy:#9fbce6;--nav:#f08a5d;--teal:#7fc3b4;--line:#2b3240;--btn:#9fbce6;--btn-ink:#12151c}}
+:root[data-theme="dark"]{--bg:#12151c;--card:#1a1f29;--ink:#ebe7de;--muted:#a3aabb;--navy:#9fbce6;--nav:#f08a5d;--teal:#7fc3b4;--line:#2b3240;--btn:#9fbce6;--btn-ink:#12151c}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);min-height:100vh}
+a{color:var(--navy);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--nav);outline-offset:3px}
+.shell{max-width:1280px;margin:0 auto;padding:32px 28px 96px;display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:56px}
+.side{position:sticky;top:32px;align-self:start}
+.photo{position:relative;width:140px;height:140px;border-radius:50%;overflow:hidden;border:2px solid var(--line);background:var(--navy);color:var(--btn-ink);display:grid;place-items:center;font-size:44px;font-weight:600;margin-bottom:28px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.name{font-size:34px;line-height:1.15;font-weight:700;margin:0 0 10px;color:var(--ink)}
+.role{font-size:20px;color:var(--navy);min-height:32px;margin:0 0 30px}
+.role i{display:inline-block;width:2px;height:1.1em;background:var(--navy);vertical-align:text-bottom;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.menu{display:flex;flex-direction:column;gap:14px}
+.menu a{display:flex;align-items:center;gap:20px;text-decoration:none;color:var(--nav);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:15px}
+.menu a::before{content:"";width:40px;height:1px;background:var(--line);transition:width .2s}
+.menu a.on{text-decoration:underline;text-underline-offset:6px}
+.menu a.on::before{width:80px;background:var(--navy)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:44px 48px;height:calc(100vh - 150px);min-height:420px;overflow:auto}
+.js .pg{display:none}.js .pg.on{display:block}
+h1{font-size:30px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 28px;padding-bottom:20px;border-bottom:2px solid var(--navy);color:var(--ink)}
+h2{font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);color:var(--teal)}
+p{margin:0 0 14px;color:var(--muted);max-width:72ch}
+b{color:var(--ink);font-weight:600}
+ul{padding-left:20px;margin:0 0 14px;color:var(--muted)}li{margin-bottom:8px}li::marker{color:var(--navy)}
+.row{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.when{font-family:var(--mono);font-size:13px;color:var(--teal);font-weight:500;text-transform:uppercase;padding-top:4px}
+.row h3{font-size:19px;margin:0 0 4px;font-weight:600;color:var(--ink)}
+.row .sub{color:var(--navy);margin:0 0 6px}
+.row .mono{font-family:var(--mono);font-size:13px;color:var(--muted);margin:0 0 8px}
+.row p:last-child,.row ul:last-child{margin-bottom:0}
+.sk{display:grid;grid-template-columns:230px 1fr;gap:28px;padding:16px 0;border-bottom:1px solid var(--line)}
+.sk:last-child{border-bottom:0}
+.sk dt{font-weight:600;color:var(--ink)}
+.sk dd{margin:0;text-align:right;color:var(--muted)}
+.sk dd b{color:var(--ink)}
+.pub{padding:16px 0;border-bottom:1px solid var(--line)}
+.pub:last-child{border-bottom:0}
+.pub h3{font-size:17px;line-height:1.4;margin:0 0 6px;font-weight:600}
+.pub p{margin:0;font-size:14px}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;padding:1px 9px;border:1px solid var(--line);border-radius:999px;margin-right:6px;color:var(--teal)}
+.dock{position:fixed;left:0;right:0;bottom:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:10px;flex-wrap:wrap;background:linear-gradient(transparent,var(--bg) 35%)}
+.dock a,.dock button{font:600 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--navy);cursor:pointer}
+.dock a.main{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.drone{position:fixed;top:6px;width:54px;color:var(--navy);opacity:.55;pointer-events:none}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr;gap:28px;padding:24px 16px 120px}
+  .side{position:static}
+  .menu{flex-direction:row;flex-wrap:wrap;gap:8px 20px}.menu a::before{display:none}.menu a{font-size:13px}
+  .card{height:auto;overflow:visible;padding:28px 22px}
+  .row,.sk{grid-template-columns:1fr;gap:4px}.sk dd{text-align:left}
+  h1{font-size:24px}.drone{display:none}
+}
+@media (prefers-reduced-motion:reduce){.role i{animation:none}}
+</style>
+</head>
+<body>
+<svg class="drone" style="left:30%" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 6h16M39 6h16M13 6v5M47 6v5M21 15h18v8H21zM30 15v-4"/><circle cx="30" cy="19" r="2.5"/></svg>
+<svg class="drone" style="left:62%" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 6h16M39 6h16M13 6v5M47 6v5M21 15h18v8H21zM30 15v-4"/><circle cx="30" cy="19" r="2.5"/></svg>
 
+<div class="shell">
+<aside class="side">
+  <div class="photo">AR<img src="photo.jpg" alt="Anupam Roy" onerror="this.remove()"></div>
+  <h1 class="name" style="all:unset;display:block;font-size:34px;line-height:1.15;font-weight:700;margin:0 0 10px">Anupam Roy</h1>
+  <p class="role"><span id="typed"></span><i></i></p>
+  <nav class="menu" aria-label="Sections">
+    <a href="#about" class="on">About</a>
+    <a href="#education">Education &amp; Skills</a>
+    <a href="#experience">Experience &amp; Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Honors &amp; Awards</a>
+    <a href="#leadership">Leadership &amp; Service</a>
+  </nav>
+</aside>
+
+<main class="card" id="card">
+
+<section class="pg on" id="p-about">
+  <h1>About</h1>
+  <p>I am an Avionics Engineering graduate (BSc, March 2026) from Aviation and Aerospace University, Bangladesh, with a CGPA of 3.52/4.00. I come from Khulna, and my work sits where antennas, radar and wireless communication meet.</p>
+  <p>My undergraduate thesis was a compact <b>4-element UWB microstrip MIMO antenna</b>, which I designed, fabricated and measured. I have since published and presented work on patch antennas, <b>OTFS waveforms</b> and <b>6G integrated sensing and communication (ISAC)</b>, and I review manuscripts for the IEEE Geoscience and Remote Sensing Society.</p>
+  <p>From 2022 to 2025 I was a research assistant on the university rocket project, working on the electrical power system.</p>
+  <h2>Research interests</h2>
+  <ul>
+    <li><b>Antenna design:</b> UWB, multiband and reconfigurable microstrip patch antennas, MIMO isolation, defected ground structures.</li>
+    <li><b>Radar signal processing:</b> Pulse-radar simulation and parameter analysis in MATLAB/Simulink.</li>
+    <li><b>6G ISAC:</b> Foundation models and agentic learning for radar-native scene understanding.</li>
+    <li><b>Wireless waveforms:</b> OTFS design and implementation, adaptive filtering.</li>
+  </ul>
+</section>
+
+<section class="pg" id="p-education">
+  <h1>Education &amp; Skills</h1>
+  <div class="row">
+    <div class="when">Graduated<br>March 2026</div>
+    <div><h3>BSc in Avionics Engineering</h3>
+    <p class="sub">Aviation and Aerospace University, Bangladesh (AAUB)</p>
+    <p class="mono">CGPA 3.52 / 4.00</p>
+    <p>Thesis: UWB microstrip patch antenna and MIMO. <a href="#">Certificate of Medium of Instruction (English)</a></p></div>
+  </div>
+  <h2>Skills</h2>
+  <dl style="margin:0">
+    <div class="sk"><dt>Programming</dt><dd><b>Python</b> (Intermediate), <b>C</b>, <b>C++</b> (Intermediate)</dd></div>
+    <div class="sk"><dt>RF, Simulation &amp; Modeling</dt><dd><b>CST Studio Suite</b> (Intermediate), <b>MATLAB</b> and <b>Simulink</b> (Intermediate), <b>PSpice</b> (Proficient)</dd></div>
+    <div class="sk"><dt>Embedded Systems &amp; IoT</dt><dd><b>Arduino IDE</b>, <b>Raspberry Pi</b> (Intermediate)</dd></div>
+    <div class="sk"><dt>Technical Tools</dt><dd><b>LaTeX</b>, Microsoft Office, Google Workspace, Canva (all Proficient)</dd></div>
+    <div class="sk"><dt>Languages</dt><dd>Bangla (Native), English (Proficient), Hindi (Conversational)</dd></div>
+  </dl>
+</section>
+
+<section class="pg" id="p-experience">
+  <h1>Experience &amp; Projects</h1>
+  <h2>Research</h2>
+  <div class="row">
+    <div class="when">Jan 2025 – Dec 2025</div>
+    <div><h3>Undergraduate Thesis: UWB Microstrip Patch Antenna and MIMO</h3>
+    <ul>
+      <li><b>Method:</b> Designed and fabricated a compact 4-element UWB MIMO antenna covering 3.1–10.25 GHz, using spike-shaped radiators and defected ground structures to improve isolation and reduce mutual coupling.</li>
+      <li><b>Results:</b> 24 dB isolation, ECC of 4.5 × 10⁻³, maximum gain of 1.85 dBi and 68% radiation efficiency. Measured minimum S11 was −55.73 dB.</li>
+    </ul><p><a href="#">Thesis book</a></p></div>
+  </div>
+  <div class="row">
+    <div class="when">Jan 2022 – Dec 2025</div>
+    <div><h3>Research Assistant, Rocket Project</h3><p class="sub">Aviation and Aerospace University, Bangladesh</p>
+    <p>Worked on the design and testing of the Electrical Power System (EPS) for rocket systems: power management, system analysis, software integration and prototype testing.</p></div>
+  </div>
+  <h2>Projects</h2>
+  <div class="row">
+    <div class="when">May – Jun 2026</div>
+    <div><h3>Monostatic Pulse Radar in MATLAB/Simulink</h3>
+    <p>Simulation and parameter analysis of a monostatic pulse radar. <a href="#">Details with code</a></p></div>
+  </div>
+  <div class="row">
+    <div class="when">Jul – Dec 2024</div>
+    <div><h3>Real-Time Sensor Monitoring with IoT and Blynk</h3>
+    <p>Built an environmental monitoring system on a Raspberry Pi with an SHT20 temperature and humidity sensor, monitored remotely through the Blynk server.</p></div>
+  </div>
+  <h2>Professional experience</h2>
+  <div class="row">
+    <div class="when">Nov 25, 2025</div>
+    <div><h3>Radar Unit Visit</h3><p class="sub">Civil Aviation Authority of Bangladesh (CAAB)</p>
+    <p>Gained practical exposure to radar surveillance systems and ATC operational monitoring that support flight safety and regulatory compliance.</p></div>
+  </div>
+  <div class="row">
+    <div class="when">Jun – Jul 2024</div>
+    <div><h3>Industrial Trainee</h3><p class="sub">Bangladesh Air Force, MROU 208 &amp; MROU 216</p>
+    <p>Hands-on exposure to aircraft maintenance, inspection and repair. Assisted with avionics troubleshooting and component servicing, and learned maintenance documentation and safety procedures.</p></div>
+  </div>
+  <div class="row">
+    <div class="when">2019 – 2025</div>
+    <div><h3>Teaching Assistant</h3>
+    <p>Tutored SSC and HSC students in mathematics and science, including algebra, calculus and physics. <a href="#">Certificate</a></p></div>
+  </div>
+</section>
+
+<section class="pg" id="p-publications">
+  <h1>Publications</h1>
+  <div class="pub"><h3>Closed-Loop Sensor-Informed Agentic Foundation Learning for Adaptive Radar-Native Scene Understanding in High-Mobility 6G ISAC Networks</h3><p><span class="tag">Under review</span>ICECE 2026 · First author · <a href="#">Paper</a></p></div>
+  <div class="pub"><h3>Radar-Native Foundation Model for Semantic Understanding of Synthetic Aperture Radar Imagery in 6G ISAC</h3><p><span class="tag">Under review</span>ICECE 2026 · First author · <a href="#">Paper</a></p></div>
+  <div class="pub"><h3>Reconfigurable Dual-Ring Patch Antenna with Varactor-Diode Based Frequency Tuning</h3><p><span class="tag">Presented</span>IEEE EICT (7th) · First author and presenter · <a href="#">Paper</a></p></div>
+  <div class="pub"><h3>Adaptive Filtering Techniques for Signal Enhancement in Modern Communication Systems</h3><p><span class="tag">Accepted</span>11th IEEE Asia-Pacific Conference on Computer Science and Data Engineering 2026 · Co-author · <a href="#">Paper</a></p></div>
+  <div class="pub"><h3>Design and Implementation of OTFS-Based Waveforms for Next Generation Wireless Communication Using MATLAB</h3><p><span class="tag">Accepted</span>IEEE OMLET 2026 · First author · <a href="#">GitHub</a> · <a href="#">Paper</a></p></div>
+  <div class="pub"><h3>Optimized Multiband Microstrip Patch Antenna with Circular DGS for Enhanced 6 GHz Performance</h3><p><span class="tag">Presented</span>IEEE ICCCNT 2025 (16th) · Co-author and presenter · Publication in process · <a href="#">Paper</a></p></div>
+</section>
+
+<section class="pg" id="p-awards">
+  <h1>Honors &amp; Awards</h1>
+  <div class="row"><div class="when">2025</div><div><h3>AAUB Special Scholarship</h3><p>Awarded for a GPA of 3.85 in the 7th semester.</p></div></div>
+  <div class="row"><div class="when">2023</div><div><h3>AAUB Merit Scholarship</h3><p>Awarded for a GPA of 3.64 in the 2nd semester.</p></div></div>
+  <div class="row"><div class="when">2022</div><div><h3>Admission Test Merit Position: 42nd</h3><p>AAUB. Received a BDT 10,000 merit scholarship.</p></div></div>
+  <div class="row"><div class="when">2022</div><div><h3>Rocketry Innovation Challenge</h3><p>Top 10 entries for a research idea in the national competition organized by a2i (Aspire to Innovate), ICT Division of Bangladesh.</p></div></div>
+  <p><a href="#">Certificates</a></p>
+</section>
+
+<section class="pg" id="p-leadership">
+  <h1>Leadership &amp; Service</h1>
+  <div class="row"><div class="when">2026 – present</div><div><h3>Manuscript Reviewer</h3><p class="sub">IEEE Geoscience and Remote Sensing Society (GRSS)</p><p><a href="#">Certificate</a></p></div></div>
+  <div class="row"><div class="when">2022 – 2025</div><div><h3>Outreach Secretary, AAUB Drone Club</h3><p>Led campus-wide outreach and supported event planning, budgeting, sponsorship coordination and team management. <a href="#">Certificate</a></p></div></div>
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:anupamroy0103@gmail.com">anupamroy0103@gmail.com</a><br>Khulna, Bangladesh</p>
+</section>
+
+</main>
+</div>
+
+<div class="dock">
+  <a class="main" href="#" id="cv">Résumé</a>
+  <a href="mailto:anupamroy0103@gmail.com">Email</a>
+  <a href="#" id="li">LinkedIn</a>
+  <a href="#" id="rg">ResearchGate</a>
+  <button type="button" id="theme">Theme</button>
+</div>
+
+<script>
+(function(){
+  var d=document.documentElement;d.classList.add("js");
+  var pages=["about","education","experience","publications","awards","leadership"];
+  var links=[].slice.call(document.querySelectorAll(".menu a"));
+  function show(){
+    var h=(location.hash||"#about").slice(1);if(pages.indexOf(h)<0)h="about";
+    pages.forEach(function(p){document.getElementById("p-"+p).classList.toggle("on",p===h)});
+    links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
+    document.getElementById("card").scrollTop=0;
+  }
+  addEventListener("hashchange",show);show();
+  document.getElementById("theme").addEventListener("click",function(){
+    var dk=d.getAttribute("data-theme")==="dark"||(d.getAttribute("data-theme")!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);
+    d.setAttribute("data-theme",dk?"light":"dark");
+  });
+  var roles=["Avionics Engineer","Antenna & RF Researcher","Radar & ISAC Researcher"],el=document.getElementById("typed");
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent=roles[0];return}
+  var r=0,i=0,del=false;
+  (function tick(){
+    var w=roles[r];i+=del?-1:1;el.textContent=w.slice(0,i);
+    var t=del?35:70;
+    if(!del&&i===w.length){del=true;t=1600}else if(del&&i===0){del=false;r=(r+1)%roles.length;t=300}
+    setTimeout(tick,t);
+  })();
+})();
+</script>
+</body>
+</html>
